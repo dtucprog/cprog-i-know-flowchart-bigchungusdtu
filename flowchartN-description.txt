@@ -1,0 +1,27 @@
+1. START: The process begins when the user is "Awake".
+
+2. STEP: Check calendar.
+
+3. INPUT: Input the current day of the week (Week_day).
+
+4. DECISION: Is week_day? == 1
+   - YES (Weekday/Study day): 
+     a. STEP: Go to "DTU and study".
+     b. INPUT: Input the initial number of study hours needed (study_hours).
+     c. LOOP START (Study Check): Is study_hours == 0?
+        - NO: Proceed to "Study for 1 hour", then move to "Decrease study_hours -1", and finally loop back directly to the "Is study_hours == 0?" check.
+        - YES: Proceed to "Generate homework", then "Go home", and move to generate random task, which comes after week_day == 0 verification.
+   - NO (Weekend/Day off): 
+     a. STEP: "Generate random_task".
+     b. INPUT: Input the specific random task.
+     c. LOOP START (Task Execution): "Do random_task".
+     d. DECISION: Is random_task done?
+        - NO: Loop back to the "Do random_task" step.
+        - YES: Move to the homework verification step.
+
+5. LOOP START (Homework Verification): Is homework done?
+   - NO: Proceed to "Do homework". After doing homework, the process loops back to the top of this decision ("Is homework done?") to re-evaluate the status.
+   - YES: 
+     a. OUTPUT: "Homework is done".
+     b. STEP: "Have fun".
+     c. END: "Go to bed".
